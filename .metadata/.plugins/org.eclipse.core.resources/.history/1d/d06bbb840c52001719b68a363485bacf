@@ -1,0 +1,12 @@
+package org.rvslab.chapter2.bootmessaging;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BootmessagingApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BootmessagingApplication.class, args);
+	}
+}

@@ -1,0 +1,28 @@
+package org.rvslab.chapter2.boothateoas;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class BoothateoasApplicationTests {
+
+	@Test
+	public void contextLoads() {
+	}
+
+	@Test
+	public void testSecureService() {
+		String plainCreds = "guest:guest123";
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Authorization", "Basic " + new String(Base64.
+				encode(plainCreds.getBytes())));
+		HttpEntity<String> request = new HttpEntity<String>(headers);
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Greet> response = restTemplate.exchange("http://localhost:8080", HttpMethod.GET, request, Greet.class);
+				Assert.assertEquals("Hello World!", response.getBody().
+						getMessage());
+	}
+}

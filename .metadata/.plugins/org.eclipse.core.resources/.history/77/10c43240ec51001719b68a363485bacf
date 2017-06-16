@@ -1,0 +1,24 @@
+package org.rvslab.chapter2;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.rvslab.chapter2.Application.Greet;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.web.client.RestTemplate;
+
+import org.junit.Assert;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+public class ApplicationTests {
+
+	@Test
+	public void contextLoads() {
+		RestTemplate restaTemplate = new RestTemplate();
+		Greet greet = restaTemplate.getForObject
+				("http://localhost:8080", Greet.class);
+		Assert.assertEquals("Hello World", greet.getMessage());
+	}
+}

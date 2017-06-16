@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;gestao-festa/src/main/resources/templates/ListaConvidados.html&apos; to &apos;ListarConvidados.html&apos;" description="Rename resource &apos;ListaConvidados.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/ListaConvidados.html" name="ListarConvidados.html" stamp="1490836714410" updateReferences="true"/>
+</session>
